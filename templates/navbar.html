@@ -1,0 +1,49 @@
+{% load static %}
+
+<div style="width: 100%; z-index: 20;" class="position-fixed">
+<nav id="navbar" style="height: 45px;" class="navbar navbar-expand-lg bg-light border-bottom px-4">
+    <div class="container-fluid">
+        <ul style="font-size: 14px;" class="navbar-nav fw-bold">
+            <li class="nav-item">
+                <a class="nav-link" href="/market-place/">Market Place</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/transaction/">Riwayat Transaksi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Buka Bantuan</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<nav style="height: 73px;" class="navbar navbar-expand-lg bg-white border-bottom px-4">
+    <div class="container-fluid bg-white">
+        <a class="navbar-brand fw-bold" href="/"><span class="me-3 ms-2 text-danger"><i class="bi bi-shop"></i></span>MathShop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div style="width: 420px;" class="input-group">
+                <input type="text" class="form-control" placeholder="Cari disini!" aria-label="Cari disini!" aria-describedby="button-addon2">
+                <button id="btn-search" class="btn" type="button" id="button-addon2"><i class="bi bi-zoom-in"></i></button>
+            </div>
+            <ul class="navbar-nav fw-bold ms-3 me-auto">
+                <li class="nav-item"><a href="#" class="nav-link text-black">Kategori</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-black">Produk Virtual</a></li>
+            </ul>
+            <ul id="nav-auth" class="navbar-nav fw-bold border-start px-3">
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Masuk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="#">Daftar</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>

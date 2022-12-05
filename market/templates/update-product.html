@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Perbarui - MathShop{% endblock %}
+
+{% block content %}
+
+<div style="padding-top: 100px;" class="d-flex flex-column justify-content-center align-items-center mb-5">
+    <a class="navbar-brand fw-bold fs-4 mb-4 mt-5" href="/"><span class="me-3 ms-2 text-danger"><i class="bi bi-shop"></i></span>MathShop</a>
+    <!--Form Login-->
+    <div style="width: 400px;" class="border p-4">
+        <p class="fs-4 fw-bold text-center">Update Produk Anda di MathShop</p>
+        <form action="record/{{ product.id }}" class="d-flex flex-column mb-2" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <label for="product">Nama Produk:</label>
+            <input class="form-control mb-4" type="text" name="product" placeholder="Masukan nama produk anda!" value="{{ product.product }}">
+            <label for="price">Harga Produk:</label>
+            <input class="form-control mb-4" type="text" name="price" placeholder="Berapa harganya?" value="{{ product.price }}">
+            <label for="description">Deskripsi :</label>
+            <textarea class="form-control mb-4" name="description" placeholder="Deskripsikan produk anda!">{{ product.description }}</textarea>
+            <button class="btn btn-success fw-bold fs-5" type="submit">Update</button>
+        </form>
+        <a href="/market-place/" class="btn btn-danger fw-bold w-100 fs-5">Batal</a>
+    </div>
+</div>
+
+{% endblock %}

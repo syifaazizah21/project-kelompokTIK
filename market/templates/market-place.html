@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Market Place - MathShop{% endblock %}
+
+{% block content %}
+
+<main style="padding-top: 150px; padding-bottom: 50px" class="bg-light d-flex flex-column align-items-center">
+    <a class="navbar-brand fw-bold fs-4" href="/"><span class="me-3 ms-2 text-danger"><i class="bi bi-shop"></i></span>MathShop</a>
+    <h2 class="text-center mb-5">Nikmati belanja dengan harga terbaik!</h2>
+    <div class="container-fluid d-flex flex-wrap justify-content-center gap-5">
+        {% for product in product %}
+            <div class="card" style="width: 14rem;">
+                <img style="width: 100%; height: 13rem;" class="card-img-top bg-info" src="{{ product.thumbnail.url }}">
+                <div class="card-body d-flex flex-column justify-content-center flex-direction-between">
+                    <h5 class="card-title">{{ product.product }}</h5>
+                    <p class="fw-bold">{{ product.price }}</p>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="text-center"><a href="#" class="btn btn-success w-100 fw-bold">Beli</a></p>
+                    <div class="d-flex justify-content-center gap-4">
+                        <p class="text-center"><a href="/update-product/{{ product.id }}" class="btn btn-info w-100 text-white fw-bold">Update</a></p>
+                        <p class="text-center"><a href="/delete-product/{{ product.id }}" class="btn btn-danger w-100 text-white fw-bold">Delete</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="/add-product/" class="btn btn-success my-5 fw-bold">Tambah Produk<br><i class="bi bi-caret-right-square"></i></a>
+</main>
+
+{% endblock %}
